@@ -29,6 +29,7 @@ Este proyecto contiene una estructura de carpetas y archivos para el desarrollo 
   ```
 
 ## APIs para Probar desde Postman
+**Nota**: Para probar las APIs una vez creadas en el Contenedor, debes quitar "prueba2024" de la URL.
 
 ### Listar Todos los Usuarios
 - Método: GET
