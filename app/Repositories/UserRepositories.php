@@ -25,7 +25,7 @@ class UserRepositories
         $users = [];
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $users[] = new User($row['id'], $row['name'],$row['lastname'], $row['document'], $row['email'], $row['password'], $row['type']);
+                $users[] = new User($row['name'],$row['lastname'], $row['document'], $row['email'], $row['password'], $row['type'],$row['id']);
             }
         }
         return $users;
@@ -43,7 +43,7 @@ class UserRepositories
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             //print_r($row);exit;
-            $users[] = new User($row['id'], $row['name'],$row['lastname'], $row['document'], $row['email'], $row['password'], $row['type']);
+            $users[] = new User($row['name'],$row['lastname'], $row['document'], $row['email'], $row['password'], $row['type'],$row['id']);
             return $users;
         } else {
             return null;
