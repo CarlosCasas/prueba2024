@@ -1,6 +1,3 @@
-Aquí tienes un ejemplo de contenido para tu archivo README.md:
-
----
 
 # Proyecto Prueba2024
 
