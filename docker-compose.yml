@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  php_apache:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: app_prueba2024
+    ports:
+      - "80:80"
+    volumes:
+      - C:/prueba2024:/var/www/html
+    networks:
+      - net-app-prueba
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql_prueba2024
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: bd_prueba
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+      - ./mysql:/docker-entrypoint-initdb.d  # Monta el directorio con los scripts SQL
+    networks:
+      - net-app-prueba
+
+networks:
+  net-app-prueba:
+    driver: bridge

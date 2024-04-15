@@ -1,0 +1,16 @@
+# Ignorar archivos de configuración de IDE
+.idea/
+.vscode/
+
+# Ignorar archivos de dependencias
+node_modules/
+vendor/
+
+# Ignorar archivos de compilación y resultados
+build/
+dist/
+*.log
+
+#other
+mysql/
+mysql-data/
